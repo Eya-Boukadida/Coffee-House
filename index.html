@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee House | Expérience Premium à Sousse</title>
+    
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="description" content="Découvrez Coffee House à Sousse : une sélection de cafés d'exception, pâtisseries artisanales et une atmosphère chaleureuse au cœur de la Tunisie.">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ═══════════════════════ NAVBAR ═══════════════════════ -->
+    <header class="navbar" id="navbar">
+        <div class="logo">
+            <span class="logo-icon">☕</span>
+            <span class="logo-text"><em>Coffee</em> House</span>
+        </div>
+        <nav>
+            <a href="#" class="active" id="nav-accueil">Accueil</a>
+            <a href="#menu" id="nav-menu">Menu</a>
+            <a href="#why" id="nav-why">Pourquoi nous</a>
+            <a href="#reviews" id="nav-reviews">Avis</a>
+            <a href="#contact" id="nav-contact">Contact</a>
+        </nav>
+        <button class="hamburger" id="hamburger" aria-label="Menu mobile">
+            <span></span><span></span><span></span>
+        </button>
+    </header>
+
+    <!-- ═══════════════════════ HERO ═══════════════════════ -->
+    <section class="hero"
+        style="background-image: linear-gradient(135deg, rgba(0,0,0,0.55) 0%, rgba(15,8,3,0.75) 100%), url('images/hero.jpg');">
+        <div class="hero-content reveal-hero">
+            <span class="hero-badge">✦ Ouvert 7j/7</span>
+            <h1>L'art du café,<br><em>le temps d'un instant</em></h1>
+            <p>Grains d'exception soigneusement sélectionnés, torréfiés avec passion &mdash;<br>
+                pâtisseries artisanales au cœur de Sousse.</p>
+            <div class="hero-btns">
+                <button class="btn-primary" id="btn-discover"
+                    onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">
+                    Découvrir le menu
+                </button>
+                <a href="#contact" class="btn-outline">Nous trouver</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat"><strong>15+</strong><span>Spécialités</span></div>
+                <div class="stat-sep"></div>
+                <div class="stat"><strong>500+</strong><span>Clients/jour</span></div>
+                <div class="stat-sep"></div>
+                <div class="stat"><strong>98%</strong><span>Satisfaction</span></div>
+            </div>
+        </div>
+        <a href="#menu" class="scroll-indicator" aria-label="Défiler vers le bas">
+            <span class="scroll-dot"></span>
+        </a>
+    </section>
+
+    <!-- ═══════════════════════ MENU : CAFÉS ═══════════════════════ -->
+    <section id="menu" class="menu section-padding reveal">
+        <div class="section-header">
+            <span class="section-label">☕ Notre sélection</span>
+            <h2>Nos Créations Café</h2>
+            <p class="section-sub">De l'espresso classique aux créations glacées, chaque tasse est préparée à la perfection.</p>
+        </div>
+
+        <div class="grid">
+
+            <div class="card">
+                <div class="card-img-wrap">
+                    <img src="images/espresso.jpg"
+                        alt="Tasse d'espresso sur une surface en pierre noire" loading="lazy">
+                    <span class="badge badge-hot">🔥 Best-seller</span>
+                </div>
+                <div class="card-info">
+                    <div class="card-header">
+                        <h3>Espresso</h3>
+                        <span class="price">3.000 DT</span>
+                    </div>
+                    <p class="card-desc">Pur arabica, extraction 25 secondes, crema dorée — l'essence du café.</p>
+                    <button class="btn-add" onclick="order('Espresso')">+ Commander</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img-wrap">
+                    <img src="images/cappuccino.jpg"
+                        alt="Cappuccino avec latte art en forme de cœur" loading="lazy">
+                </div>
+                <div class="card-info">
+                    <div class="card-header">
+                        <h3>Cappuccino</h3>
+                        <span class="price">5.500 DT</span>
+                    </div>
+                    <p class="card-desc">Espresso, lait chaud et mousse veloutée — l'harmonie parfaite.</p>
+                    <button class="btn-add" onclick="order('Cappuccino')">+ Commander</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img-wrap">
+                    <img src="images/latte.jpg"
+                        alt="Verre de latte macchiato avec couches de café et lait" loading="lazy">
+                </div>
+                <div class="card-info">
+                    <div class="card-header">
+                        <h3>Latte Macchiato</h3>
+                        <span class="price">6.000 DT</span>
+                    </div>
+                    <p class="card-desc">Espresso versé sur lait chaud — couches distinctes, saveur douce.</p>
+                    <button class="btn-add" onclick="order('Latte Macchiato')">+ Commander</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img-wrap">
+                    <img src="images/iced-caramel.jpg"
+                        alt="Iced caramel macchiato avec couches de caramel et glace" loading="lazy">
+                    <span class="badge badge-new">🧊 Été</span>
+                </div>
+                <div class="card-info">
+                    <div class="card-header">
+                        <h3>Iced Caramel Macchiato</h3>
+                        <span class="price">7.500 DT</span>
+                    </div>
+                    <p class="card-desc">Café glacé, caramel maison, lait froid — rafraîchissant et gourmand.</p>
+                    <button class="btn-add" onclick="order('Iced Caramel Macchiato')">+ Commander</button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- PÂTISSERIES -->
+        <div class="section-header" style="margin-top: 80px;">
+            <span class="section-label">🥐 Fait maison</span>
+            <h2>Douceurs &amp; Pâtisseries</h2>
+            <p class="section-sub">Préparées chaque matin par notre pâtissière, avec des ingrédients locaux de saison.</p>
+        </div>
+        <div class="grid">
+
+            <div class="card">
+                <div class="card-img-wrap">
+                    <img src="images/croissants.jpg"
+                        alt="Croissants dorés saupoudrés de sucre glace" loading="lazy">
+                    <span class="badge badge-hot">🥐 Matin</span>
+                </div>
+                <div class="card-info">
+                    <div class="card-header">
+                        <h3>Croissant</h3>
+                        <span class="price">2.500 DT</span>
+                    </div>
+                    <p class="card-desc">Feuilletage pur beurre, croustillant à l'extérieur, moelleux à l'intérieur.</p>
+                    <button class="btn-add" onclick="order('Croissant')">+ Commander</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img-wrap">
+                    <img src="images/pain-chocolat.jpg"
+                        alt="Pains au chocolat avec feuilletage et chocolat noir" loading="lazy">
+                </div>
+                <div class="card-info">
+                    <div class="card-header">
+                        <h3>Pain au Chocolat</h3>
+                        <span class="price">3.200 DT</span>
+                    </div>
+                    <p class="card-desc">Pâte feuilletée, barre de chocolat noir 70% — un classique irrésistible.</p>
+                    <button class="btn-add" onclick="order('Pain au Chocolat')">+ Commander</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img-wrap">
+                    <img src="images/cheesecake.jpg"
+                        alt="Tranche de cheesecake aux myrtilles sur assiette blanche" loading="lazy">
+                    <span class="badge badge-new">⭐ Favori</span>
+                </div>
+                <div class="card-info">
+                    <div class="card-header">
+                        <h3>Cheesecake</h3>
+                        <span class="price">8.500 DT</span>
+                    </div>
+                    <p class="card-desc">Base biscuitée, crème mascarpone onctueuse, coulis de fruits rouges.</p>
+                    <button class="btn-add" onclick="order('Cheesecake')">+ Commander</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img-wrap">
+                    <img src="images/tiramisu.jpg"
+                        alt="Tranche de tiramisu saupoudrée de cacao" loading="lazy">
+                </div>
+                <div class="card-info">
+                    <div class="card-header">
+                        <h3>Tiramisu</h3>
+                        <span class="price">9.000 DT</span>
+                    </div>
+                    <p class="card-desc">Mascarpone, espresso, biscuits savoiardi &amp; cacao amer — la dolce vita.</p>
+                    <button class="btn-add" onclick="order('Tiramisu')">+ Commander</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ POURQUOI NOUS ═══════════════════════ -->
+    <section id="why" class="why section-padding reveal">
+        <div class="why-inner">
+            <div class="why-image">
+                <img src="images/barista.jpg"
+                    alt="Barista en train de préparer un café dans notre café" loading="lazy">
+                <div class="why-img-badge">
+                    <span>Depuis</span>
+                    <strong>2018</strong>
+                </div>
+            </div>
+            <div class="why-content">
+                <span class="section-label">✨ Notre engagement</span>
+                <h2>Pourquoi choisir Coffee House ?</h2>
+                <p class="why-intro">Nous croyons que chaque tasse de café mérite une attention exceptionnelle — de la graine à la tasse.</p>
+                <div class="why-features">
+                    <div class="feature">
+                        <div class="feature-icon">🌱</div>
+                        <div class="feature-text">
+                            <h4>Grains éthiques</h4>
+                            <p>Sourcing direct auprès de petits producteurs certifiés. Traçabilité complète garantie.</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">👨‍🍳</div>
+                        <div class="feature-text">
+                            <h4>Baristas certifiés SCA</h4>
+                            <p>Notre équipe est formée et certifiée par la Specialty Coffee Association.</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🥐</div>
+                        <div class="feature-text">
+                            <h4>Pâtisseries fraîches du jour</h4>
+                            <p>Tout est préparé chaque matin sur place, sans conservateurs artificiels.</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🌿</div>
+                        <div class="feature-text">
+                            <h4>Éco-responsable</h4>
+                            <p>Emballages biodégradables, zéro déchet alimentaire, compostage des marc de café.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ AVIS CLIENTS ═══════════════════════ -->
+    <section id="reviews" class="reviews section-padding reveal">
+        <div class="section-header">
+            <span class="section-label">⭐ Témoignages</span>
+            <h2>Ce que disent nos clients</h2>
+            <p class="section-sub">Plus de 2 000 avis positifs sur Google — ils nous font confiance chaque jour.</p>
+        </div>
+
+        <div class="reviews-grid">
+
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <blockquote>"Le meilleur espresso de Sousse, sans aucun doute. L'ambiance est feutrée, le service impeccable. Je reviens chaque matin !"</blockquote>
+                <div class="review-author">
+                    <div class="review-avatar" style="background: linear-gradient(135deg, #f093fb, #f5576c);">A</div>
+                    <div>
+                        <strong>Amira B.</strong>
+                        <span>Cliente fidèle depuis 2021</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card review-featured">
+                <div class="review-stars">★★★★★</div>
+                <blockquote>"Le tiramisu est un pur chef-d'œuvre. La combinaison café + pâtisserie ici est imbattable. Endroit idéal pour travailler ou se détendre."</blockquote>
+                <div class="review-author">
+                    <div class="review-avatar" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">K</div>
+                    <div>
+                        <strong>Karim T.</strong>
+                        <span>Blogger culinaire</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <blockquote>"Cadre magnifique, personnel chaleureux. Le cheesecake aux fruits rouges est à tomber ! Je recommande à tous mes amis."</blockquote>
+                <div class="review-author">
+                    <div class="review-avatar" style="background: linear-gradient(135deg, #43e97b, #38f9d7);">S</div>
+                    <div>
+                        <strong>Sarra M.</strong>
+                        <span>Google Local Guide</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="rating-summary">
+            <div class="rating-big">4.9</div>
+            <div class="rating-right">
+                <div class="rating-stars-row">★★★★★</div>
+                <p>Basé sur <strong>2 347</strong> avis Google</p>
+                <div class="rating-bars">
+                    <div class="bar-row"><span>5★</span><div class="bar"><div class="fill" style="width:92%"></div></div><span>92%</span></div>
+                    <div class="bar-row"><span>4★</span><div class="bar"><div class="fill" style="width:6%"></div></div><span>6%</span></div>
+                    <div class="bar-row"><span>3★</span><div class="bar"><div class="fill" style="width:2%"></div></div><span>2%</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ CONTACT ═══════════════════════ -->
+    <section id="contact" class="contact section-padding reveal">
+        <div class="section-header">
+            <span class="section-label">📍 Nous trouver</span>
+            <h2>Venez nous rendre visite</h2>
+            <p class="section-sub">Nous sommes ouverts 7 jours sur 7, de 7h à 23h.</p>
+        </div>
+
+        <div class="contact-wrapper">
+            <div class="contact-info">
+
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                    <div>
+                        <h4>Adresse</h4>
+                        <p>Avenue du 14 Janvier, Sousse 4000, Tunisie</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                    <div>
+                        <h4>Téléphone</h4>
+                        <p><a href="tel:+21625000000">+216 25 000 000</a></p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                    <div>
+                        <h4>Email</h4>
+                        <p><a href="mailto:contact@coffeehouse.tn">contact@coffeehouse.tn</a></p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fa-solid fa-clock"></i></div>
+                    <div>
+                        <h4>Horaires</h4>
+                        <p>Lun – Ven : 07h00 – 22h00<br>Sam – Dim : 08h00 – 23h00</p>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-link" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="social-link" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+
+            <form class="contact-form" id="contact-form" onsubmit="handleForm(event)">
+                <h3>Envoyer un message</h3>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fname">Prénom</label>
+                        <input type="text" id="fname" name="fname" placeholder="Votre prénom" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lname">Nom</label>
+                        <input type="text" id="lname" name="lname" placeholder="Votre nom" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Sujet</label>
+                    <select id="subject" name="subject" required>
+                        <option value="" disabled selected>Choisir un sujet</option>
+                        <option value="reservation">Réservation de table</option>
+                        <option value="evenement">Événement privé</option>
+                        <option value="feedback">Avis / Commentaire</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Votre message..." required></textarea>
+                </div>
+                <button type="submit" class="btn-primary btn-full" id="btn-send">
+                    <i class="fa-solid fa-paper-plane"></i> Envoyer le message
+                </button>
+                <div id="form-success" class="form-success hidden">
+                    ✅ Message envoyé ! Nous vous répondrons sous 24h.
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="logo">
+                    <span class="logo-icon">☕</span>
+                    <span class="logo-text"><em>Coffee</em> House</span>
+                </div>
+                <p>L'art du café au cœur de Sousse. Chaque tasse est une invitation à ralentir et savourer l'instant.</p>
+            </div>
+            <div class="footer-links">
+                <h5>Navigation</h5>
+                <a href="#">Accueil</a>
+                <a href="#menu">Menu</a>
+                <a href="#why">Notre histoire</a>
+                <a href="#reviews">Avis</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-links">
+                <h5>Légal</h5>
+                <a href="#">Mentions légales</a>
+                <a href="#">Politique de confidentialité</a>
+                <a href="#">CGU</a>
+            </div>
+            <div class="footer-newsletter">
+                <h5>Newsletter</h5>
+                <p>Recevez nos offres exclusives et nouveautés chaque semaine.</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="votre@email.com" aria-label="Email newsletter" id="newsletter-email">
+                    <button type="button" onclick="subscribeNewsletter()" id="btn-subscribe">→</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Coffee House Sousse — Tous droits réservés.</p>
+            <div class="footer-socials">
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast notification -->
+    <div id="toast" class="toast" role="alert"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
